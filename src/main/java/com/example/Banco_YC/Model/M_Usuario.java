@@ -16,7 +16,7 @@ public class M_Usuario {
     private Long Telefone;
     private Long cpf;
     private Long cep;
-    private int senha;
+    private String senha;
     private String nConta;
     private int agencia;
     private String tipoConta;
@@ -77,11 +77,11 @@ public class M_Usuario {
         this.cpf = cpf;
     }
 
-    public int getSenha() {
+    public String getSenha() {
         return senha;
     }
 
-    public void setSenha(int senha) {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
 

@@ -5,13 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class C_Usuario {
 
     @GetMapping("/cadastro")
     public String getCadastro(){
-        return "usuario/cadastro";
+        return "cadastro";
     }
 
     @PostMapping("/cadastro")
@@ -22,7 +23,7 @@ public class C_Usuario {
                                    @RequestParam("idade") String idade,
                                    @RequestParam("cep") String cep,
                                    @RequestParam("senha") String senha){
-        S_Usuario.cadastrarUsuario(nome,email,telefone,cpf,senha,idade,cep);
-        return "usuario/cadastro";
+        S_Usuario.cadastrarUsuario(nome, email, telefone, cpf, idade, cep, senha);
+        return "cadastro";
     }
 }

@@ -2,17 +2,24 @@ $("#enviar").click(cadastrarUsuario);
 
 function cadastrarUsuario(){
 	let nome = $("#nome").val();
-	let matricula = $("#matricula").val();
+	let idade = $("#idade").val();
+	let cpf = $("#cpf").val();
+	let telefone = $("#telefone").val();
+	let cep = $("#cep").val();
 	let email = $("#email").val();
+	let senha = $("senha").val();
 
 	$.ajax({
 		type: "POST",
 		url: "/cadastro",
 		data:{
 			nome:nome,
-			matricula:matricula,
+			idade:idade,
+			cpf:cpf,
+			telefone:telefone,
+			cep:cep,
 			email:email,
-			cargo:cargo,
+			senha:senha
 		},
 		success:function(data){
 			alert("ok");

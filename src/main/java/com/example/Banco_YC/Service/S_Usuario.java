@@ -59,7 +59,7 @@ public class S_Usuario {
             m_usuario.setIdade(Integer.parseInt(idade));
             m_usuario.setCpf(Long.parseLong(cpf));
             m_usuario.setCep(Long.parseLong(cep));
-            m_usuario.setSenha(Integer.parseInt(senha));
+            m_usuario.setSenha(senha);
             m_usuario.setnConta(S_GeradorConta.gerarConta());
             m_usuario.setAgencia(29902);
 
