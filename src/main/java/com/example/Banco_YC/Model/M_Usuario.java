@@ -56,8 +56,7 @@ public class M_Usuario {
         return telefone;
     }
 
-    public void setTelefone(Long telefone) {
-        telefone = telefone;
+    public void setTelefone(Long telefone) {this.telefone = telefone;
     }
 
     public Long getCep() {

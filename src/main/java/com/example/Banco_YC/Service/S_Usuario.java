@@ -13,6 +13,19 @@ public class S_Usuario {
         this.r_usuario =  r_usuario;
     }
 
+    public static M_Usuario verificarLogin(String cpf, String senha){
+        boolean dadosValidos = true;
+        cpf = S_Generico.limparNumero(cpf);
+
+        if(S_Generico.textoEstaVazio(cpf)){
+            return null;
+        } else if(S_Generico.textoEstaVazio(senha)){
+            return null;
+        }
+        return r_usuario.buscarPorCpfSenha(Long.parseLong(cpf),senha);
+    }
+
+
     public static String cadastrarUsuario(String nome, String cpf, String idade, String cep, String senha,String telefone, String email){
         boolean podeSalvar = true;
         String mensagem = "";

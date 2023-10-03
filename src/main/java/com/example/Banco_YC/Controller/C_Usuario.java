@@ -1,6 +1,7 @@
 package com.example.Banco_YC.Controller;
 
 import com.example.Banco_YC.Service.S_Usuario;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,4 +27,24 @@ public class C_Usuario {
         S_Usuario.cadastrarUsuario(nome, cpf, idade, cep, senha, telefone, email);
         return "cadastro";
     }
+
+    @GetMapping("/login")
+    public String getLogin(){
+        return "index";
+    }
+
+    @PostMapping("/login")
+    @ResponseBody
+    public boolean postLogin(@RequestParam("cpf") String cpf,
+                             @RequestParam("senha") String senha,
+                             HttpSession session){
+
+        session.setAttribute("usuario", S_Usuario.verificarLogin(cpf, senha));
+        if(session.getAttribute("usuario") == null){
+            return false;
+        } else{
+            return true;
+        }
+    }
+
 }
