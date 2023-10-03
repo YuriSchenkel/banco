@@ -7,7 +7,7 @@ function cadastrarUsuario(){
 	let telefone = $("#telefone").val();
 	let cep = $("#cep").val();
 	let email = $("#email").val();
-	let senha = $("senha").val();
+	let senha = $("#senha").val();
 
 	$.ajax({
 		type: "POST",

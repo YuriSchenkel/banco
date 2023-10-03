@@ -13,13 +13,12 @@ public class M_Usuario {
     private String nome;
     private int idade;
     private String email;
-    private Long Telefone;
+    private Long telefone;
     private Long cpf;
     private Long cep;
     private String senha;
-    private String nConta;
+    private int n_conta;
     private int agencia;
-    private String tipoConta;
 
     public Long getId() {
         return id;
@@ -54,11 +53,11 @@ public class M_Usuario {
     }
 
     public Long getTelefone() {
-        return Telefone;
+        return telefone;
     }
 
     public void setTelefone(Long telefone) {
-        Telefone = telefone;
+        telefone = telefone;
     }
 
     public Long getCep() {
@@ -85,12 +84,12 @@ public class M_Usuario {
         this.senha = senha;
     }
 
-    public String getnConta() {
-        return nConta;
+    public int getnconta() {
+        return n_conta;
     }
 
-    public void setnConta(String nConta) {
-        this.nConta = nConta;
+    public void setnconta(int n_conta) {
+        this.n_conta = n_conta;
     }
 
     public int getAgencia() {
@@ -101,11 +100,4 @@ public class M_Usuario {
         this.agencia = agencia;
     }
 
-    public String getTipoConta() {
-        return tipoConta;
-    }
-
-    public void setTipoConta(String tipoConta) {
-        this.tipoConta = tipoConta;
-    }
 }

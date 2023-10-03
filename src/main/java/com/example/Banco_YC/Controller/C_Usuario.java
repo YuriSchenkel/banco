@@ -23,7 +23,7 @@ public class C_Usuario {
                                    @RequestParam("idade") String idade,
                                    @RequestParam("cep") String cep,
                                    @RequestParam("senha") String senha){
-        S_Usuario.cadastrarUsuario(nome, email, telefone, cpf, idade, cep, senha);
+        S_Usuario.cadastrarUsuario(nome, cpf, idade, cep, senha, telefone, email);
         return "cadastro";
     }
 }

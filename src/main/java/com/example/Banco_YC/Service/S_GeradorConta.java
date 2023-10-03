@@ -1,12 +1,13 @@
 package com.example.Banco_YC.Service;
 
+import com.sun.jdi.IntegerValue;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
 @Service
 public class S_GeradorConta {
-    public static String gerarConta() {
+    public static int gerarConta() {
 
         final char[] CARACTERES_NUMERICOS = "0123456789".toCharArray();
         String nConta = "";
@@ -16,6 +17,6 @@ public class S_GeradorConta {
             nConta += CARACTERES_NUMERICOS[rand.nextInt(0, CARACTERES_NUMERICOS.length)];
         }
 
-        return nConta;
+        return Integer.valueOf(nConta);
     }
 }

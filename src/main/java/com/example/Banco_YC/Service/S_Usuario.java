@@ -21,7 +21,7 @@ public class S_Usuario {
             podeSalvar = false;
             mensagem += "O nome precisa ser preenchido!";
         }
-        if(!S_Generico.textoEstaVazio(email)){
+        if(S_Generico.textoEstaVazio(email)){
             podeSalvar = false;
             mensagem += "O e-mail precisa ser preenchido!";
         }
@@ -53,15 +53,14 @@ public class S_Usuario {
         if(podeSalvar){
             M_Usuario m_usuario = new M_Usuario();
             m_usuario.setNome(nome);
+            m_usuario.setIdade(Integer.parseInt(idade));
             m_usuario.setEmail(email);
             m_usuario.setTelefone(Long.parseLong(telefone));
             m_usuario.setCpf(Long.parseLong(cpf));
-            m_usuario.setIdade(Integer.parseInt(idade));
-            m_usuario.setCpf(Long.parseLong(cpf));
             m_usuario.setCep(Long.parseLong(cep));
             m_usuario.setSenha(senha);
-            m_usuario.setnConta(S_GeradorConta.gerarConta());
             m_usuario.setAgencia(29902);
+            m_usuario.setnconta(S_GeradorConta.gerarConta());
 
             try{
                 r_usuario.save(m_usuario);
