@@ -77,6 +77,8 @@ public class S_Usuario {
             m_usuario.setSenha(senha);
             m_usuario.setAgencia(29902);
             m_usuario.setnconta(S_GeradorConta.gerarConta());
+            m_usuario.setSaldo(0.00f);
+
 
             try{
                 r_usuario.save(m_usuario);
@@ -87,4 +89,5 @@ public class S_Usuario {
         }
         return mensagem;
     }
+
 }

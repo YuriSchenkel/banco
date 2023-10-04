@@ -37,16 +37,15 @@ public class S_Responsavel {
             podeSalvar = false;
             mensagem += "O cpf precisa ser informado!";
         }
+
         if(S_Generico.textoEstaVazio(S_Generico.limparNumero(idade))){
             podeSalvar = false;
             mensagem += "A idade precisa ser informada!";
         }
 
         if(podeSalvar){
-            M_Usuario mu = new M_Usuario();
             M_Responsavel m_responsavel = new M_Responsavel();
 
-            m_responsavel.setUsuario_id(m_responsavel.getUsuario_id());
             m_responsavel.setNome(nome);
             m_responsavel.setIdade(Integer.parseInt(idade));
             m_responsavel.setEmail(email);

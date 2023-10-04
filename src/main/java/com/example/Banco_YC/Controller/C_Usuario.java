@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class C_Usuario {
 
     @GetMapping("/cadastro")
-    public String getCadastro(){
+    public String getCadastro() {
         return "cadastro";
     }
 
@@ -24,28 +24,29 @@ public class C_Usuario {
                                    @RequestParam("cpf") String cpf,
                                    @RequestParam("idade") String idade,
                                    @RequestParam("cep") String cep,
-                                   @RequestParam("senha") String senha){
+                                   @RequestParam("senha") String senha) {
         S_Usuario.cadastrarUsuario(nome, cpf, idade, cep, senha, telefone, email);
         return "cadastro";
     }
 
     @GetMapping("/cadastroResponsavel")
-    public String getCadastroResponsavel(){
+    public String getCadastroResponsavel() {
         return "cadastroResponsavel";
     }
 
     @PostMapping("/cadastroResponsavel")
+
     public String cadastrarResponsavel(@RequestParam("nome") String nome,
-                                   @RequestParam("email") String email,
-                                   @RequestParam("telefone") String telefone,
-                                   @RequestParam("cpf") String cpf,
-                                   @RequestParam("idade") String idade){
+                                       @RequestParam("email") String email,
+                                       @RequestParam("telefone") String telefone,
+                                       @RequestParam("cpf") String cpf,
+                                       @RequestParam("idade") String idade) {
         S_Responsavel.cadastrarResponsavel(nome, cpf, idade, telefone, email);
         return "cadastroResponsavel";
     }
 
     @GetMapping("/login")
-    public String getLogin(){
+    public String getLogin() {
         return "index";
     }
 
@@ -53,12 +54,12 @@ public class C_Usuario {
     @ResponseBody
     public boolean postLogin(@RequestParam("cpf") String cpf,
                              @RequestParam("senha") String senha,
-                             HttpSession session){
+                             HttpSession session) {
 
         session.setAttribute("usuario", S_Usuario.verificarLogin(cpf, senha));
-        if(session.getAttribute("usuario") == null){
+        if (session.getAttribute("usuario") == null) {
             return false;
-        } else{
+        } else {
             return true;
         }
     }

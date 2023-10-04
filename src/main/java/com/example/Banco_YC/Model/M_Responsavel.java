@@ -12,12 +12,12 @@ public class M_Responsavel {
     private Long id;
 
 
-    private Long usuario_id;
     private String nome;
     private int idade;
     private String email;
     private Long telefone;
     private Long cpf;
+
 
     public Long getId() {
         return id;
@@ -25,14 +25,6 @@ public class M_Responsavel {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getUsuario_id() {
-        return usuario_id;
-    }
-
-    public void setUsuario_id(Long usuario_id) {
-        this.usuario_id = usuario_id;
     }
 
     public String getNome() {

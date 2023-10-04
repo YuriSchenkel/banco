@@ -19,6 +19,7 @@ public class M_Usuario {
     private String senha;
     private int n_conta;
     private int agencia;
+    private float saldo;
 
     public Long getId() {
         return id;
@@ -99,4 +100,11 @@ public class M_Usuario {
         this.agencia = agencia;
     }
 
+    public float getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
 }

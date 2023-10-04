@@ -5,7 +5,6 @@ function cadastrarResponsavel(){
 	let idade = $("#idade").val();
 	let cpf = $("#cpf").val();
 	let telefone = $("#telefone").val();
-	let cep = $("#cep").val();
 	let email = $("#email").val();
 
 	$.ajax({
