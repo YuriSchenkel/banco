@@ -8,7 +8,6 @@ import java.util.regex.Pattern;
 @Service
 public class S_Generico {
     public static boolean validarEmail(String email) {
-        // Defina a expressão regular para validar o e-mail
         String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);

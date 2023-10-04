@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -100,8 +100,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 text-end">
-            <button id="enviar" class="btn btn-lg btn-primary mt-3">Cadastrar</button>
+        <div class="col-12 text-end" th:if="${idade lt 18}">
+            <a id="enviarMenor" class="btn btn-lg btn-primary mt-3" th:href="@{/cadastroResponsavel}">Cadastrar</a>
+        </div>
+        <div class="col-12 text-end" th:unless="${idade lt 18}">
+            <button id="enviarMaior" class="btn btn-lg btn-primary mt-3">Cadastrar</button>
         </div>
     </div>
 </div>

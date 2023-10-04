@@ -1,5 +1,6 @@
 package com.example.Banco_YC.Controller;
 
+import com.example.Banco_YC.Service.S_Responsavel;
 import com.example.Banco_YC.Service.S_Usuario;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -26,6 +27,21 @@ public class C_Usuario {
                                    @RequestParam("senha") String senha){
         S_Usuario.cadastrarUsuario(nome, cpf, idade, cep, senha, telefone, email);
         return "cadastro";
+    }
+
+    @GetMapping("/cadastroResponsavel")
+    public String getCadastroResponsavel(){
+        return "cadastroResponsavel";
+    }
+
+    @PostMapping("/cadastroResponsavel")
+    public String cadastrarResponsavel(@RequestParam("nome") String nome,
+                                   @RequestParam("email") String email,
+                                   @RequestParam("telefone") String telefone,
+                                   @RequestParam("cpf") String cpf,
+                                   @RequestParam("idade") String idade){
+        S_Responsavel.cadastrarResponsavel(nome, cpf, idade, telefone, email);
+        return "cadastroResponsavel";
     }
 
     @GetMapping("/login")

@@ -1,5 +1,6 @@
 package com.example.Banco_YC.Service;
 
+import com.example.Banco_YC.Model.M_Responsavel;
 import com.example.Banco_YC.Model.M_Usuario;
 import com.example.Banco_YC.R_Pessoa.R_Usuario;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -65,6 +66,8 @@ public class S_Usuario {
 
         if(podeSalvar){
             M_Usuario m_usuario = new M_Usuario();
+            M_Responsavel mr = new M_Responsavel();
+
             m_usuario.setNome(nome);
             m_usuario.setIdade(Integer.parseInt(idade));
             m_usuario.setEmail(email);
